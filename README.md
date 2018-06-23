@@ -1,2 +1,2 @@
 # fbgl
-Framebuffer graphics library
+Framebuffer graphics library for displays such as the ST7735
