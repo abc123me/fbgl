@@ -160,7 +160,7 @@ uint32_t makeColorRGB(float rp, float gp, float bp){
 	return r + g + b;
 }
 uint32_t makeColorRGB(float grey){
-	makeColorRGB(grey, grey, grey);
+	return makeColorRGB(grey, grey, grey);
 }
 uint32_t makeColorHSV(float h, float s, float v){
 	float hh, p, q, t, ff;
