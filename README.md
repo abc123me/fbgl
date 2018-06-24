@@ -2,7 +2,7 @@
 Framebuffer graphics library for displays such as the ST7735
 
 ## Tested devices
-- ST7735 (works great)
+- ST7735 (works great) `FrameBuffer(160, 128, 5, 6, 5, 2);`
 
 ## Usage (psuedocode)
 ```
