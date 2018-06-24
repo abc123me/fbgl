@@ -4,7 +4,7 @@
 
 int main(int argc, char** argv){
 	int width = 160, height = 128;
-	BufferedFrameBuffer fb = BufferedFrameBuffer("/dev/fb8", width, height, 5, 6, 5, 2);
+	FrameBuffer fb = FrameBuffer("/dev/fb8", width, height, 5, 6, 5, 2);
 
         fb.background(fb.rgb(0));
         fb.fillRect(fb.rgb(0.5, 0.5, 0.5), 30, 30, 30, 30);
@@ -16,7 +16,6 @@ int main(int argc, char** argv){
 	fb.line(fb.rgb(1, 1, 0), 30, 128 - 30, 30, 30);
 	fb.line(fb.rgb(1, 1, 0), 160 - 30, 30, 30, 30);
 	fb.fillEllipse(fb.rgb(1, 0, 1), 100, 100, 20, 20);
-	fb.pushBuffer();
 
 	std::cin.get();
         fb.background(fb.rgb(0, 0, 0));
@@ -24,7 +23,6 @@ int main(int argc, char** argv){
                 fb.line(fb.rgb(1, 0, 0), width / 2, 0, i, height);
                 fb.line(fb.rgb(0, 0, 1), width / 2, height, i, 0);
 	}
-	fb.pushBuffer();
 
         std::cin.get();
         fb.background(fb.rgb(0, 0, 0));
@@ -36,7 +34,6 @@ int main(int argc, char** argv){
                 uint32_t color = fb.hsv(hue, sat, val);
         	fb.pushPixel(color);
 	}
-	fb.pushBuffer();
 
 	fb.destroy();
         return 0;
